@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package content;
+
+service ContentService {
+    rpc RegisterUser (RegisterRequest) returns (RegisterResponse);
+    rpc CreateSubmission (SubmissionRequest) returns (Submission);
+    rpc ReviewSubmission (ReviewRequest) returns (Submission);
+}
+
+message RegisterRequest {
+    string username = 1;
+    string password = 2;
+}
+
+message RegisterResponse {
+    bool success = 1;
+    string message = 2;
+    string user_id = 3;
+}
+
+message SubmissionRequest {
+    string content = 1;
+}
+
+message ReviewRequest {
+    string submission_id = 1;
+    string status = 2;
+}
+
+message Submission {
+    string id = 1;
+    string user_id = 2;
+    string content = 3;
+    string status = 4;
+    string created_at = 5;
+    optional string reviewed_by = 6;
+    optional string reviewed_at = 7;
+} 
