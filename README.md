@@ -92,4 +92,21 @@ python -m grpc_tools.protoc -I=proto --python_out=proto --grpc_python_out=proto 
 4. 推送到分支
 5. 創建 Pull Request
 
+## JWT 配置
+
+在運行服務之前，請確保設置 JWT 密鑰：
+
+1. 生成新的密鑰：
+```python
+import secrets
+jwt_secret = secrets.token_hex(32)
+```
+
+2. 設置環境變量：
+```bash
+export JWT_SECRET_KEY='your_generated_secret_key'
+```
+
+注意：請妥善保管密鑰，不要將其提交到版本控制系統。
+
 

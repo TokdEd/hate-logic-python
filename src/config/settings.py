@@ -6,7 +6,7 @@ MONGO_URI = os.getenv('MONGO_URI', 'mongodb://localhost:27017/content_system')
 DATABASE_NAME = 'content_system'
 
 # JWT 配置
-JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'your-secret-key')
+JWT_SECRET_KEY = os.getenv('JWT_SECRET_KEY', 'your_generated_secret_key')
 JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)
 
 # gRPC 配置
